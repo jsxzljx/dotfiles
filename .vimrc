@@ -116,9 +116,9 @@ set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
 
 set number
-if exists('&relativenumber')
-  set relativenumber
-endif
+" if exists('&relativenumber')
+"   set relativenumber
+" endif
 
 set laststatus=2
 set smartindent
@@ -391,6 +391,8 @@ endif
 set exrc
 set secure
 
+set nofoldenable
+set foldlevel=100
 
 " vim:set foldmethod=marker foldlevel=0 sts=2 sw=2 ts=2 expandtab nomodeline:
 
