@@ -1,7 +1,23 @@
 [user]
-	email = jsxzljx@163.com
-	name = Jiaxi
+	email = jiaxi.liu@bytedance.com
+	name = jiaxi.liu
 [core]
 	editor = vim
+	sshCommand = sshpass -f /cloudide/meta/user/codebase_jwt ssh -o StrictHostKeyChecking=no
+	fsync = all
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+[url "gitlab@git.byted.org:"]
+	insteadOf = https://code.byted.org/
+	insteadOf = ssh://git@code.byted.org:29418/
+	insteadOf = ssh://git@code.byted.org/
+[url "gitlab@git.byted.org"]
+	insteadOf = git@code.byted.org
+[url "gerrit@git.byted.org:"]
+	insteadOf = ssh://deploy@git.byted.org:29418/
+	insteadOf = gitr:
+	insteadOf = https://git.byted.org/
+	insteadOf = ssh://git.byted.org:29418/
+	insteadOf = ssh://git@git.byted.org:29418/
+[pull]
+	rebase = true

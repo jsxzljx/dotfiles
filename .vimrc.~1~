@@ -209,7 +209,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " snippets
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 
 " send text from vim buffer to tmux buffer
 Plug 'lukelike/tslime.vim'
@@ -227,7 +227,7 @@ Plug 'lervag/vimtex', { 'for': 'tex' }
 " Markdown
 Plug 'gabrielelana/vim-markdown'
 " Python
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 " Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -287,6 +287,7 @@ let g:AutoPairs={'(':')', '[':']', '{':'}'}
 let g:jedi#rename_command="<leader>rn"
 let g:jedi#popup_on_dot=0
 let g:jedi#show_call_signatures=2
+let g:go_version_warning = 0
 set completeopt-=preview
 
 " junegunn/fzf.vim
@@ -396,5 +397,3 @@ set foldlevel=100
 
 " vim:set foldmethod=marker foldlevel=0 sts=2 sw=2 ts=2 expandtab nomodeline:
 
-
-let g:go_version_warning = 0

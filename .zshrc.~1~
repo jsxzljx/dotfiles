@@ -1,12 +1,3 @@
-
-# recommend to change ~/.cloudiderc
-[[ -r /etc/cloudide_profile ]] && . /etc/cloudide_profile || true
-
-[[ -r ~/.cloudiderc ]] && . ~/.cloudiderc || true
-export PATH=$HOME/.local/bin:$PATH
-export PATH=/home/byteide/.local/bin:$PATH
-
-
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -133,9 +124,23 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/data76/home/liujiaxi.1995/miniconda2/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/data76/home/liujiaxi.1995/miniconda2/etc/profile.d/conda.sh" ]; then
+        . "/data76/home/liujiaxi.1995/miniconda2/etc/profile.d/conda.sh"
+    else
+        export PATH="/data76/home/liujiaxi.1995/miniconda2/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
-export PYTHONPATH="//home/byteide/py:/home/byteide/py/i18n_pyutil:/home/byteide/py/tt_thrift_gen:/opt/tiger:$PYTHONPATH"
+
+export PYTHONPATH="/data76/home/liujiaxi.1995/py:/data76/home/liujiaxi.1995/py/i18n_pyutil:/data76/home/liujiaxi.1995/py/tt_thrift_gen:/opt/tiger:$PYTHONPATH"
 export SEC_KV_AUTH=1
-export PATH=/home/byteide/.local/bin:$PATH
-export PATH=/opt/tiger/yarn_deploy/hadoop/bin:$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=/home/byteide/.local/bin:$PATH
