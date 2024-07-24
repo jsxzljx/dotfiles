@@ -4,8 +4,13 @@
 #    sudo apt update
 #    sudo apt install zsh git vim tmux wget curl -y
 
+echo "here is MAC or Linux?"
 # Copy configuration files
 cp -rf --backup=numbered ./ ~/
+# if MAC rather than linux
+#cp -rf ./ ~/
+
+
 cd ~/
 rm install.sh README.md archive.sh
 rm -rf .git
