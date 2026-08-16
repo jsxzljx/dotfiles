@@ -1,0 +1,6 @@
+[http]
+	version = HTTP/1.1
+[url "https://ghfast.top/https://github.com/"]
+	insteadOf = https://github.com/
+[url "https://github.com/"]
+	pushInsteadOf = https://ghfast.top/https://github.com/
