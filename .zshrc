@@ -50,7 +50,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ubuntu docker zsh-autosuggestions cargo shrink-path)
+plugins=(git ubuntu docker zsh-autosuggestions shrink-path)
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
@@ -93,7 +93,7 @@ export TERM=xterm-256color
 
 # export CXX='/usr/bin/clang++'
 
-export PATH=~/bin:~/.npm-global/bin:$PATH
+export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.npm-global/bin:$PATH"
 alias yd='ydcv -s'
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
@@ -119,4 +119,3 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-

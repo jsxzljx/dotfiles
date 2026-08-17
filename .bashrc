@@ -2,6 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# This file is Bash-specific. Keep it safe when someone sources it from Zsh.
+if [ -z "${BASH_VERSION:-}" ]; then
+    return 0
+fi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -113,6 +118,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# User-local Python CLI tools installed by pipx.
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 [[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
     [[ -n "$ATTACH_ONLY" ]] && {
         tmux a 2>/dev/null || {
@@ -124,4 +134,3 @@ fi
     tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
     exec tmux
 }
-
