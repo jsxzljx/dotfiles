@@ -118,6 +118,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Node/npm 由 nvm 管理，确保全局命令（包括 Codex）来自当前 Node 版本。
+export NVM_NODEJS_ORG_MIRROR="https://mirrors.cloud.tencent.com/nodejs-release"
+export NPM_CONFIG_REGISTRY="https://mirrors.cloud.tencent.com/npm/"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
 # User-local Python CLI tools installed by pipx.
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"

@@ -93,7 +93,8 @@ export TERM=xterm-256color
 
 # export CXX='/usr/bin/clang++'
 
-export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.npm-global/bin:$PATH"
+# npm 全局包由 nvm 管理；不要把已废弃的 ~/.npm-global/bin 放到 PATH 前面。
+export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 alias yd='ydcv -s'
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
@@ -119,3 +120,9 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Node/npm 由 nvm 管理，确保全局命令（包括 Codex）来自当前 Node 版本。
+export NVM_NODEJS_ORG_MIRROR="https://mirrors.cloud.tencent.com/nodejs-release"
+export NPM_CONFIG_REGISTRY="https://mirrors.cloud.tencent.com/npm/"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
